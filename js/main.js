@@ -1,22 +1,52 @@
-let progLangage_list = ['java', 'javascript', 'c#', 'c', 'c++']
-let animal_list = ['chien', 'chat', 'oiseau', 'souris', 'tigre', 'serpent']
-let words_list = []
+let langages_list = ['java', 'javascript', 'c#', 'c', 'c++']
+let animaux_list = ['chien', 'chat', 'lion', 'tigre', 'serpent']
+let pays_list = ['france', 'espagne', 'italie', 'grece', 'maroc', 'turquie']
+
+let blank_list_langage = []
+let blank_list_animaux = []
+let blank_list_pays = []
 let score = 0
 
 var btn = document.querySelector('input')
 
-function updateBtn() {
-    for (let i = 0; i < progLangage_list.length; i++) {
-        if (btn.value == progLangage_list[i]) {
-            words_list.push(progLangage_list[i])
-            progLangage_list.splice(i, 1);
-            score += 1
-            console.log("PROG LISTE : ", progLangage_list)
-            console.log("words : ", words_list)
-            console.log("score : ", score)
+function generateTheme(list, blank) {
+    for (let i = 0; i < list.length; i++) {
+        if (btn.value == list[i]) {
+            blank.push(list[i])
+            list.splice(i, 1);
+            console.log("LISTE : ", list)
+            console.log("BLANK : ", blank)
         }
-        if (progLangage_list.length == 0) {
+        if (list.length == 0) {
             console.log("Vous avez trouvé tous les mots ! Bravo !")
         }
     }
+}
+
+function langage() {
+    window.location = "file:///C:/Users/gaudreem/Documents/Workspace/PENDU/Pendu_for%C3%AAt/langage.html"
+}
+
+function animaux() {
+    window.location = "file:///C:/Users/gaudreem/Documents/Workspace/PENDU/Pendu_for%C3%AAt/animaux.html"
+}
+
+function pays() {
+    window.location = "file:///C:/Users/gaudreem/Documents/Workspace/PENDU/Pendu_for%C3%AAt/pays.html"
+}
+
+function retour() {
+    window.location = "file:///C:/Users/gaudreem/Documents/Workspace/PENDU/Pendu_for%C3%AAt/index.html"
+}
+
+function checkLangage() {
+    generateTheme(langages_list, blank_list_langage)
+}
+
+function checkAnimaux() {
+    generateTheme(animaux_list, blank_list_animaux)
+}
+
+function checkPays() {
+    generateTheme(pays_list, blank_list_pays)
 }
