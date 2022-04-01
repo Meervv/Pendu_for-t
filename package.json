@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Meervv/Pendu_for-t/issues"
   },
-  "homepage": "https://github.com/Meervv/Pendu_for-t#readme"
+  "homepage": "https://github.com/Meervv/Pendu_for-t#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
