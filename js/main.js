@@ -32,7 +32,7 @@ function generateTheme(list, blank) {
         }
     }
     if (!trouve) {
-        removeTime(5);
+        removeTime(4);
     }
 }
 
@@ -72,11 +72,14 @@ function checkPays() {
 // fonction de timer
 var timer;
 var timeLeft = 60; // seconds
-const temps = document.getElementById("timer")
+const temps = document.getElementById("timer");
+const image = document.getElementById("image");
+
 
 // What to do when the timer runs out
 function gameOver() {
     clearInterval(timer)
+    btn.disabled = true
 }
 
 function addTime(value) {
@@ -85,7 +88,6 @@ function addTime(value) {
         temps.innerHTML = timeLeft;
     }
 }
-
 
 function removeTime(value) {
     if ((timeLeft - value) > 0) {
@@ -99,6 +101,8 @@ function removeTime(value) {
 
 function updateTimer() {
     timeLeft = timeLeft - 1;
+    let transparence = (100 - timeLeft) / 100;
+    image.style.opacity = transparence;
     if (timeLeft >= 0)
         temps.innerHTML = timeLeft
     else {
